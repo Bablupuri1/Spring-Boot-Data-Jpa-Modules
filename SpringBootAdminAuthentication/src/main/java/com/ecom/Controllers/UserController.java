@@ -22,7 +22,7 @@ import com.ecom.responseapi.ApiResponse;
 
 @RestController
 @RequestMapping("/api/users")
-@CrossOrigin(origins = "http://localhost:5175") // ✅ allow React frontend
+@CrossOrigin(origins = "http://localhost:5173") // ✅ allow React frontend
 
 public class UserController {
 
@@ -31,6 +31,7 @@ public class UserController {
 
 	@PostMapping("/createUser")
 	public ApiResponse createUser(@RequestBody UserPayload user) {
+		System.out.println("UserController.createUser()");
 
 		ApiResponse resp = userService.createUser(user);
 		return resp;
@@ -40,7 +41,7 @@ public class UserController {
 	
 	@PostMapping("/login")
 	public ApiResponse Authenticate(@RequestBody LoginRequest loginRequest) {
-	    return userService.Authenticate(loginRequest.getUsername(), loginRequest.getPassword());
+	    return userService.Authenticate(loginRequest.getUsername().trim(), loginRequest.getPassword().trim());
 	}
 
 	
