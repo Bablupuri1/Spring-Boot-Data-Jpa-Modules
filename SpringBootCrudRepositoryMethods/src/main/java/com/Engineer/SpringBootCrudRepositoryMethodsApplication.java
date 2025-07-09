@@ -8,6 +8,7 @@ public class SpringBootCrudRepositoryMethodsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootCrudRepositoryMethodsApplication.class, args);
+		
 	}
 
 }
