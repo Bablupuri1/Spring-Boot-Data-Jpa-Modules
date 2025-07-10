@@ -36,18 +36,12 @@ public class UserController {
 		ApiResponse resp = userService.createUser(user);
 		return resp;
 	}
-	
-	
-	
+
 	@PostMapping("/login")
 	public ApiResponse Authenticate(@RequestBody LoginRequest loginRequest) {
-	    return userService.Authenticate(loginRequest.getUsername().trim(), loginRequest.getPassword().trim());
+		return userService.Authenticate(loginRequest.getUsername().trim(), loginRequest.getPassword().trim());
 	}
 
-	
-	
-	
-	
 	@GetMapping
 	public List<Users> getAllUsers() {
 		return userService.getAllUsers();
